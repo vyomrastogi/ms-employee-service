@@ -1,4 +1,4 @@
-package com.vyom.payroll.microservices.employeeservice;
+package com.vyom.gae.payroll.microservices;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

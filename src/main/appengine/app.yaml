@@ -1,6 +1,0 @@
-runtime: java
-env: dev
-
-handlers:
-- url: /.*
-  script: this field is required, but ignored

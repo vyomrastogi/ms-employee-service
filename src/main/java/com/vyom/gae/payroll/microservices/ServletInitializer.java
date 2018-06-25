@@ -1,21 +1,13 @@
-/**
- * 
- */
-package com.vyom.payroll.microservices.employeeservice;
+package com.vyom.gae.payroll.microservices;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
-
-/**
- * @author Vyom
- *
- */
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(EmployeeServiceApplication.class);
+		return application.sources(EmployeeServiceGaeApplication.class);
 	}
 
 }
