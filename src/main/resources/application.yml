@@ -10,7 +10,10 @@ eureka:
     serviceUrl: 
      defaultZone: https://ms-eureka-server.herokuapp.com/eureka
   instance:
-    hostname: ms-eureka-server.herokuapp.com
+    securePortEnabled: true 
+    securePort: ${PORT:8080}
+    hostname: ${DOMAIN:localhost}
+    homePageUrl: https://${eureka.instance.hostname}/
 management:
   info:
     env:

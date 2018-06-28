@@ -1,5 +1,7 @@
 package com.vyom.payroll.microservices;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,8 +19,12 @@ public class EmployeeController {
 
 	@GetMapping("/employee/{empId}")
 	public Employee getEmployeeDetails(@PathVariable Long empId) {
-		Employee employee = employeeRepository.getOne(empId);
-		employee.setPort(Integer.parseInt(env.getProperty("local.server.port")));
+		Optional<Employee> optionalEmployee = employeeRepository.findById(empId);
+		Employee employee = new Employee();
+		if(optionalEmployee.isPresent()) {
+			optionalEmployee.get().setPort(Integer.parseInt(env.getProperty("local.server.port")));
+			employee = optionalEmployee.get();
+		}		
 		return employee;
 	}
 
