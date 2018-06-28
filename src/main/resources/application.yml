@@ -8,9 +8,9 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl: 
-     defaultZone: https://eureka-server-gcp.appspot.com/eureka
+     defaultZone: https://ms-eureka-server.herokuapp.com/eureka
   instance:
-    hostname: eureka-server-gcp.appspot.com
+    hostname: ms-eureka-server.herokuapp.com
 management:
   info:
     env:
